@@ -1,5 +1,6 @@
 package com.vinjo.conference.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -33,6 +34,7 @@ public class Speaker {
 
 
     @ManyToMany(mappedBy = "speakers")
+    @JsonIgnore
     private List<Session> sessions;
     public List<Session> getSessions() {
         return sessions;
